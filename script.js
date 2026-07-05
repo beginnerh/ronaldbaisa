@@ -1,0 +1,1 @@
+document.querySelectorAll('.card').forEach(c=>c.onclick=()=>c.style.scale='1.03');
