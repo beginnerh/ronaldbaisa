@@ -49,3 +49,9 @@ if (profileImg) {
     profileImg.style.display = "none";
   });
 }
+
+document.querySelectorAll(".project-img").forEach((img) => {
+  img.addEventListener("error", () => {
+    img.style.display = "none";
+  });
+});
