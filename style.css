@@ -430,7 +430,7 @@ html[data-theme="dark"] .toggle-thumb::after {
 /* skills grid */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 22px;
 }
 
@@ -461,6 +461,51 @@ html[data-theme="dark"] .toggle-thumb::after {
 }
 
 .skill-card li:first-child { border-top: none; }
+
+/* experience roadmap */
+.roadmap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.roadmap::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(var(--accent), var(--border));
+}
+
+.roadmap-item {
+  position: relative;
+  padding-left: 46px;
+}
+
+.roadmap-node {
+  position: absolute;
+  left: 8px;
+  top: 8px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 3px solid var(--accent);
+  z-index: 1;
+}
+
+.roadmap-node.node-current {
+  box-shadow: 0 0 0 4px var(--accent-soft);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 4px var(--accent-soft); }
+  50% { box-shadow: 0 0 0 8px var(--accent-soft); }
+}
 
 /* experience / education timeline */
 .timeline {
@@ -552,6 +597,49 @@ html[data-theme="dark"] .toggle-thumb::after {
   font-size: 0.85rem;
   text-align: center;
   border-top: 1px solid var(--border);
+}
+
+/* certificate cards */
+.cert-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cert-media .media-fallback { font-size: 2.4rem; }
+
+/* ============================
+   Animation — hero entrance
+   ============================ */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content > * {
+  animation: fadeInUp 0.7s ease both;
+}
+.hero-content > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-content > *:nth-child(2) { animation-delay: 0.15s; }
+.hero-content > *:nth-child(3) { animation-delay: 0.25s; }
+.hero-content > *:nth-child(4) { animation-delay: 0.35s; }
+
+.hero-photo {
+  animation: fadeInUp 0.8s ease 0.15s both;
+}
+
+/* ============================
+   Animation — scroll reveal
+   Applied via .reveal class; JS toggles .is-visible
+   when an element scrolls into view.
+   ============================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ============================
