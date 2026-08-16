@@ -1,10 +1,15 @@
 
+
 const CHATBOT_CONFIG = {
-  GEMINI_API_KEY: "AQ.Ab8RN6KM_qxgCXnoJpJnno95uZVzdpBQfNTfOjzbWjmop6xaPw",
+  GEMINI_API_KEY: "AQ.Ab8RN6K6plwsNWrE0E0F6_Ejarjxy7hLHdv289Axxy1CXJAfTA",
   MODEL: "gemini-3.6-flash", 
   ENDPOINT: "https://generativelanguage.googleapis.com/v1beta/models",
 };
 
+// ------------------------------------------------------------
+// Knowledge base: everything the bot is allowed to talk about.
+// Keep this in sync with index.html whenever you update the site.
+// ------------------------------------------------------------
 const PORTFOLIO_CONTEXT = `
 You are the friendly assistant embedded on Ronald T. Baisa's personal portfolio website.
 Answer ONLY questions related to Ronald, his skills, experience, projects, education, or
