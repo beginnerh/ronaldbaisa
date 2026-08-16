@@ -1,7 +1,7 @@
 
 
 const CHATBOT_CONFIG = {
-  GEMINI_API_KEY: "MY_API_KEY",
+  GEMINI_API_KEY: "AQ.Ab8RN6K0flKOQGAVdyEH_lVT9vxSXdOJ658tQGgj7W-YyJt3pg",
   MODEL: "gemini-3.6-flash", 
   ENDPOINT: "https://generativelanguage.googleapis.com/v1beta/models",
 };
