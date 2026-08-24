@@ -461,6 +461,18 @@ html[data-theme="dark"] .toggle-thumb::after {
 }
 
 .skill-card li:first-child { border-top: none; }
+.skill-card li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tech-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
 
 /* experience roadmap */
 .roadmap {
